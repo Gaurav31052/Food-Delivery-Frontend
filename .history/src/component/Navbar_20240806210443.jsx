@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css'
 const Navbar = ({setShowLogin}) => {
   const [menu,setMenu] = useState("home")
   const {getTotalCartAmount} = useContext(StoreContext)
-  
+  const key =new SuprSendInbox(import.meta.env.VITE_SUPRSEND_WORKSPACE_KEY)
   return <>
   
     <div className='flex justify-between items-center w-full py-3 px-20'>
@@ -28,7 +28,7 @@ const Navbar = ({setShowLogin}) => {
             <div><SuprSendInbox
               workspaceKey= {import.meta.env.VITE_SUPRSEND_WORKSPACE_KEY}
               subscriberId= "<subscriber_id>"
-              distinctId= {import.meta.env.VITE_SUPRSEND_distinctId}
+              distinctId= "{process.env.VITE_SUPRSEND_distinctId}"
             /></div>
             <div className=' relative'><Link to='/cart'><img className='w-10' src={assets.cart}></img></Link>
             <div className={getTotalCartAmount()===0? "" : " absolute w-3 h-3 bg-red-500 rounded-md top-0 right-0"}></div></div>
