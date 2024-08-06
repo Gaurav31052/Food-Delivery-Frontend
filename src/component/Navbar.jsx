@@ -2,7 +2,8 @@ import React, { useState, useContext } from 'react'
 import {assets} from '../assets/assets'
 import { Link, NavLink } from 'react-router-dom'
 import { StoreContext} from '../context/StoreContext'
-
+import SuprSendInbox from '@suprsend/react-inbox'
+import 'react-toastify/dist/ReactToastify.css'
 
 
 const Navbar = ({setShowLogin}) => {
@@ -23,7 +24,12 @@ const Navbar = ({setShowLogin}) => {
         </div>
 
         <div className='flex gap-8 pr-10'>
-            <div><img className='w-10' src={assets.search}></img></div>
+            <div><SuprSendInbox
+              workspaceKey= {process.env.VITE_SUPRSEND_WORKSPACE_KEY}
+              // workspaceKey= "ghfddfgfg"
+              subscriberId= "<subscriber_id>"
+              distinctId= {gaurav123}
+            /></div>
             <div className=' relative'><Link to='/cart'><img className='w-10' src={assets.cart}></img></Link>
             <div className={getTotalCartAmount()===0? "" : " absolute w-3 h-3 bg-red-500 rounded-md top-0 right-0"}></div></div>
             <div><button className='border-2 rounded-2xl w-38 p-2 px-5 hover:bg-slate-300 font-bold ' onClick={()=>setShowLogin(true)}>Sign in</button></div>
