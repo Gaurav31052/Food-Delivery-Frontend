@@ -27,7 +27,7 @@ const Navbar = ({setShowLogin}) => {
         <div className='flex gap-8 pr-10'>
             <div><SuprSendInbox
               workspaceKey= {import.meta.env.VITE_SUPRSEND_WORKSPACE_KEY}
-              subscriberId= "<subscriber_id>"
+              subscriberId= {import.meta.env.VITE_SUPRSEND_subscriberId}
               distinctId= {import.meta.env.VITE_SUPRSEND_distinctId}
             /></div>
             <div className=' relative'><Link to='/cart'><img className='w-10' src={assets.cart}></img></Link>
