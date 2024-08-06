@@ -9,6 +9,8 @@ import 'react-toastify/dist/ReactToastify.css'
 const Navbar = ({setShowLogin}) => {
   const [menu,setMenu] = useState("home")
   const {getTotalCartAmount} = useContext(StoreContext)
+  console.log('Workspace Key:', import.meta.env.VITE_SUPRSEND_WORKSPACE_KEY);
+console.log('API Secret:', import.meta.env.VITE_SUPRSEND_WORKSPACE_SECRET);
 
   return <>
   
